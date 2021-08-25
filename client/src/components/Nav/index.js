@@ -35,7 +35,7 @@ function Nav() {
   return (
     <header className="flex-row px-1">
       <h1>
-        <Link to="/">
+        <Link to="/products/:id">
 
           <span role="img" aria-label="shopping bag">
             🍦
