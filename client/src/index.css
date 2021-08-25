@@ -1,9 +1,11 @@
 :root {
+
   --primary: #dcd0ea;
   --secondary: #f6d7e8;
   --tertiary: #cf360f;
   --light: #fafafa;
   --dark: #24363d;
+
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -25,7 +27,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
-  color: var(--dark);
+  color: var(--primary);
 }
 
 h1,
