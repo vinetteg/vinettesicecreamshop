@@ -17,6 +17,12 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
+>>>>>>> 51ea80dc1f9c2e829a3bcf3297ab71b408b64aa8
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3"
   }

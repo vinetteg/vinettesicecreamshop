@@ -1,0 +1,36 @@
+.footer-input {
+  text-align: center;
+  background-color: aquamarine;
+  margin: 5px 5px 5px 5px;
+}
+
+h4.ui.header {
+  padding: 10px 30px;
+}
+button.ui.button {
+  padding: 5px 20px;
+  margin: 5px 20px;
+}
+
+.social-container {
+  padding: 5px 40px;
+}
+a.social {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+a.social:hover {
+  transform: translateY(-2px);
+}
+a.youtube {
+  color: #eb3223;
+}
+
+a.facebook {
+  color: #4968ad;
+}
+
+a.instagram {
+  color: black;
+}
