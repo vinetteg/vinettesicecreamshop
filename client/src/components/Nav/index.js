@@ -71,10 +71,14 @@ export default class Nav extends Component {
   };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   return (
     <header className="flex-row px-1">
       <h1>
         <Link to="/products/:id">
+=======
+  stickOverlay = () => this.setState({ overlayFixed: true });
+>>>>>>> 51ea80dc1f9c2e829a3bcf3297ab71b408b64aa8
 =======
   stickOverlay = () => this.setState({ overlayFixed: true });
 >>>>>>> 51ea80dc1f9c2e829a3bcf3297ab71b408b64aa8
