@@ -1,10 +1,9 @@
 :root {
-
-  --primary: #dcd0ea;
-  --secondary: #f6d7e8;
-  --tertiary: #cf360f;
+  --primary: #d889e8;
+  --secondary: #89e5e8;
+  --tertiary: #1a0257;
   --light: #fafafa;
-  --dark: #24363d;
+  --dark: #1a0257;
 
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
@@ -23,7 +22,8 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: "PT Sans", sans-serif;
+  font-family: "Lato", sans-serif;
+
   font-weight: 400;
   line-height: 1.5;
   font-size: 16px;
@@ -36,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Rubik", sans-serif;
+  font-family: "Pacifico", cursive;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -210,6 +210,11 @@ input:focus {
     width: 100%;
   }
 }
-/* .container {
-  background-image: url(../src/images/background.jpg);
-} */
+
+div.ui.fluid.container {
+  margin: 1.5em 0;
+
+  position: relative;
+  display: inline-block;
+  width: 100% !important;
+}
