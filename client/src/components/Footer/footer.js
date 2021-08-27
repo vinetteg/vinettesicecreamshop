@@ -4,6 +4,7 @@ import "../Footer/footer.css";
 import { Input } from "semantic-ui-react";
 import { Header } from "semantic-ui-react";
 import { Button, Icon } from "semantic-ui-react";
+import SocialFollow from "./SocialFollow";
 
 function Footer() {
   return (
@@ -11,11 +12,8 @@ function Footer() {
       <Header as="h4">Join our mailing list:</Header>{" "}
       <Input placeholder="gimme@icecream.com" />
       <Button> Join</Button>
-      <Header as="h4">Keep in touch:</Header>
-      <Button circular color="facebook" icon="facebook" />
-      <Button circular color="twitter" icon="twitter" />
-      <Button circular color="linkedin" icon="linkedin" />
-      <Button circular color="google plus" icon="google plus" />
+      <Header as="h4">Follow:</Header>
+      <SocialFollow />
     </div>
   );
 }
