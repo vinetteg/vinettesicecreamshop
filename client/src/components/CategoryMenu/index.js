@@ -8,7 +8,7 @@ import {
 import { QUERY_CATEGORIES } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
 import { List } from "semantic-ui-react";
-// import { Button } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 import { Container, Header } from "semantic-ui-react";
 
 function CategoryMenu() {
