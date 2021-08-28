@@ -119,7 +119,7 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    updateProduct: async (parent, { _id, quantity }) => {
+    updateProduct: async (parent, { id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
 
       return await Product.findOneAndUpdate(
@@ -128,7 +128,22 @@ const resolvers = {
         { new: true }
       );
     },
+<<<<<<< HEAD
  
+=======
+    updateProductComment: async (parent, args, context) => {
+      console.log("hell yeah!", args);
+      if (context.user) {
+        return await Product.findByIdAndUpdate(
+          args._id,
+          { $push: { comments: args.comment } },
+          {
+            new: true,
+          }
+        );
+      }
+    },
+>>>>>>> 07da3ed8b012f8115d2f98481fd431dc3ef5467b
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
