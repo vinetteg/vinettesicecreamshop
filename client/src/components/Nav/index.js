@@ -1,5 +1,8 @@
 import React, { Component, createRef } from "react";
+<<<<<<< HEAD
 import _ from "lodash";
+=======
+>>>>>>> b8a2483 (laid out sticky nav code)
 import Auth from "../../utils/auth";
 import CategoryMenu from "../CategoryMenu";
 import { Link } from "react-router-dom";
