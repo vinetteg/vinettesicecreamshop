@@ -9,6 +9,7 @@ import {
   UPDATE_CART_QUANTITY,
   ADD_TO_CART,
   UPDATE_PRODUCTS,
+  UPDATE_PRODUCTS_COMMENT,
 } from "../utils/actions";
 import { QUERY_PRODUCTS } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
@@ -183,18 +184,24 @@ function Detail() {
               </Comment.Content>
             </Comment>
 
-            <Form reply>
+            <Form
+              reply
+              onSubmit={(event) => {
+                event.preventDefault();
+                console.log("submitting .... ", event);
+                dispatch({
+                  type: UPDATE_PRODUCTS_COMMENT,
+                  _id: 1,
+                  comment: "hot dog are dank",
+                });
+              }}
+            >
               <Form.TextArea />
               <Form.Field
                 control={Checkbox}
                 label="I agree to the Terms and Conditions"
               />
-              <Button
-                content="Submit"
-                labelPosition="left"
-                icon="edit"
-                primary
-              />
+              <Form.Button type="submit" fluid color="blue" />
             </Form>
           </Container>
         </div>
