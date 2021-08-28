@@ -13,6 +13,7 @@ import {
 import { QUERY_PRODUCTS } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
+import { Rating } from "semantic-ui-react";
 
 import {
   Container,
@@ -124,6 +125,7 @@ function Detail() {
             </Comment.Group>
             <Comment>
               <Comment.Content>
+                <Rating icon="heart" defaultRating={1} maxRating={3} />
                 <Comment.Author as="a">Matt</Comment.Author>
                 <Comment.Metadata>
                   <div>Today at 5:42PM</div>
