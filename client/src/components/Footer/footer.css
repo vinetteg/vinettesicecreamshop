@@ -35,3 +35,9 @@ a.facebook {
 a.instagram {
   color: black;
 }
+
+h3.ui.header {
+  font-family: "Pacifico", cursive;
+  color: #1a0257;
+  text-shadow: 1px 1px #ffffff;
+}
