@@ -13,6 +13,18 @@ import {
 import { QUERY_PRODUCTS } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
+<<<<<<< HEAD
+=======
+
+import {
+  Container,
+  Header,
+  Comment,
+  Button,
+  Form,
+  Checkbox,
+} from "semantic-ui-react";
+>>>>>>> 981fdba7ae76bbad4099334e4b1d5c345fc49bc2
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -106,6 +118,88 @@ function Detail() {
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
           />
+
+          <Container fluid>
+            <Comment.Group minimal>
+              <Header as="h3" dividing>
+                Comments:
+              </Header>
+            </Comment.Group>
+            <Comment>
+              <Comment.Content>
+                <Comment.Author as="a">Matt</Comment.Author>
+                <Comment.Metadata>
+                  <div>Today at 5:42PM</div>
+                </Comment.Metadata>
+                <Comment.Text>How artistic!</Comment.Text>
+                <Comment.Actions>
+                  <Comment.Action>Reply</Comment.Action>
+                </Comment.Actions>
+              </Comment.Content>
+            </Comment>
+
+            <Comment>
+              <Comment.Content>
+                <Comment.Author as="a">Elliot Fu</Comment.Author>
+                <Comment.Metadata>
+                  <div>Yesterday at 12:30AM</div>
+                </Comment.Metadata>
+                <Comment.Text>
+                  <p>
+                    This has been very useful for my research. Thanks as well!
+                  </p>
+                </Comment.Text>
+                <Comment.Actions>
+                  <Comment.Action>Reply</Comment.Action>
+                </Comment.Actions>
+              </Comment.Content>
+              <Comment.Group>
+                <Comment>
+                  <Comment.Content>
+                    <Comment.Author as="a">Jenny Hess</Comment.Author>
+                    <Comment.Metadata>
+                      <div>Just now</div>
+                    </Comment.Metadata>
+                    <Comment.Text>
+                      Elliot you are always so right :)
+                    </Comment.Text>
+                    <Comment.Actions>
+                      <Comment.Action>Reply</Comment.Action>
+                    </Comment.Actions>
+                  </Comment.Content>
+                </Comment>
+              </Comment.Group>
+            </Comment>
+
+            <Comment>
+              <Comment.Content>
+                <Comment.Author as="a">Joe Henderson</Comment.Author>
+                <Comment.Metadata>
+                  <div>5 days ago</div>
+                </Comment.Metadata>
+                <Comment.Text>
+                  Dude, this is awesome. Thanks so much
+                </Comment.Text>
+                <Comment.Actions>
+                  <Comment.Action>Tell us what you think:</Comment.Action>
+                </Comment.Actions>
+              </Comment.Content>
+            </Comment>
+
+            <Form reply>
+              <Form.TextArea />
+              <Form.Field
+                control={Checkbox}
+                label="I agree to the Terms and Conditions"
+              />
+              <Button
+                content="Submit"
+                labelPosition="left"
+                icon="edit"
+                primary
+              />
+            </Form>
+          </Container>
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
