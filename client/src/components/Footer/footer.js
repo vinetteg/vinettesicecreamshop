@@ -9,10 +9,10 @@ import SocialFollow from "./SocialFollow";
 function Footer() {
   return (
     <div class="footer-input">
-      <Header as="h4">Join our mailing list:</Header>{" "}
+      <Header as="h3">Join our mailing list:</Header>{" "}
       <Input placeholder="gimme@icecream.com" />
       <Button> Join</Button>
-      <Header as="h4">Follow:</Header>
+      <Header as="h3">Follow:</Header>
       <SocialFollow />
     </div>
   );
