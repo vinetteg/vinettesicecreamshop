@@ -1,6 +1,7 @@
 import React, { Component, createRef } from "react";
 import _ from "lodash";
 import Auth from "../../utils/auth";
+import CategoryMenu from "../CategoryMenu";
 import { Link } from "react-router-dom";
 import {
   Container,
@@ -83,46 +84,56 @@ export default class Nav extends Component {
     function showNavigation() {
       if (Auth.loggedIn()) {
         return (
-          <Segment>
-            <ul className="flex-row">
-              <li className="mx-1">
-                <Link to="/orderHistory">Order History</Link>
-              </li>
-              <li className="mx-1">
-                {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-                <a href="/" onClick={() => Auth.logout()}>
-                  Logout
-                </a>
-              </li>
-            </ul>
-          </Segment>
+          <List celled horizontal id="navbtn">
+            <List.Item>
+              <Link to="/orderHistory">
+                <Icon link name="signup" size="big" />
+              </Link>
+            </List.Item>
+            <List.Item>
+              {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+              <a href="/" onClick={() => Auth.logout()}>
+                <Icon link name="log out" size="big" />
+              </a>
+            </List.Item>
+          </List>
         );
       } else {
         return (
-          <ul className="flex-row">
-            <li className="mx-1">
-              <Link to="/signup">Signup</Link>
-            </li>
-            <li className="mx-1">
-              <Link to="/login">Login</Link>
-            </li>
-          </ul>
+          <List celled horizontal id="navbtn">
+            <List.Item>
+              <Link to="/signup">
+                <Icon link name="signup" size="big" />
+              </Link>
+            </List.Item>
+            <List.Item>
+              <Link to="/login">
+                <Icon link name="user outline" size="big" />
+              </Link>
+            </List.Item>
+          </List>
         );
       }
     }
-
     return (
       <header className="flex-row px-1">
-        <h1>
+        <div>
           <Link to="/">
-            <span role="img" aria-label="shopping bag">
-              🍦
+            <span>
+              <Image
+                src={`/images/vicsLogo.png`}
+                alt=""
+                size="tiny"
+                circular
+                ß
+              />
             </span>
-            Vinette's Ice Cream Shop
           </Link>
-        </h1>
-
-        <nav>{showNavigation()}</nav>
+        </div>
+        <nav>
+          {showNavigation()}
+          <CategoryMenu />
+        </nav>
       </header>
     );
   }
