@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
+
 
 import Cart from "../components/Cart";
 import { useStoreContext } from "../utils/GlobalState";
@@ -12,6 +13,7 @@ import {
   UPDATE_PRODUCTS_COMMENT,
 } from "../utils/actions";
 import { QUERY_PRODUCTS } from "../utils/queries";
+import {UPDATE_COMMENT} from "../utils/mutations";
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
 import { Rating } from "semantic-ui-react";
@@ -30,9 +32,10 @@ function Detail() {
   const { id } = useParams();
 
   const [currentProduct, setCurrentProduct] = useState({});
+  const [comment, setComment] = useState("");
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-
+const [ addComment, {error} ] = useMutation(UPDATE_COMMENT);
   const { products, cart } = state;
 
   useEffect(() => {
@@ -89,9 +92,25 @@ function Detail() {
       _id: currentProduct._id,
     });
 
+
     idbPromise("cart", "delete", { ...currentProduct });
   };
+  const handleAddComment = async (e) => {
+    e.preventDefault();
+                console.log("submitting .... ", e);
+                dispatch({
+                  type: UPDATE_PRODUCTS_COMMENT,
+                  _id: 1,
+                  comment: comment,
 
+                });
+    await addComment({
+      variables: {
+        _id: currentProduct._id, 
+        comment: comment,
+      }
+    })
+  }
   return (
     <>
       {currentProduct && cart ? (
@@ -188,17 +207,9 @@ function Detail() {
 
             <Form
               reply
-              onSubmit={(event) => {
-                event.preventDefault();
-                console.log("submitting .... ", event);
-                dispatch({
-                  type: UPDATE_PRODUCTS_COMMENT,
-                  _id: 1,
-                  comment: "hot dog are dank",
-                });
-              }}
+              onSubmit={handleAddComment}
             >
-              <Form.TextArea />
+              <Form.TextArea value={comment} onChange={(e) => setComment(e.target.value) }/>
               <Form.Field
                 control={Checkbox}
                 label="I agree to the Terms and Conditions"
@@ -211,7 +222,6 @@ function Detail() {
       {loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />
     </>
-  );
-}
-
+  
+  )};
 export default Detail;

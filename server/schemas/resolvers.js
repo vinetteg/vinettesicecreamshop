@@ -128,12 +128,9 @@ const resolvers = {
         { new: true }
       );
     },
-<<<<<<< HEAD
- 
-=======
     updateProductComment: async (parent, args, context) => {
       console.log("hell yeah!", args);
-      if (context.user) {
+      // if (context.user.role === "admin") {
         return await Product.findByIdAndUpdate(
           args._id,
           { $push: { comments: args.comment } },
@@ -141,9 +138,8 @@ const resolvers = {
             new: true,
           }
         );
-      }
+      // }
     },
->>>>>>> 07da3ed8b012f8115d2f98481fd431dc3ef5467b
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 

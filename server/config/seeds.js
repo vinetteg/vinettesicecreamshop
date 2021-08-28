@@ -153,7 +153,7 @@ db.once('open', async () => {
     lastName: 'User',
     email: 'admin@testmail.com',
     password: 'password12345',
-    role: 'Admin',
+    role: 'admin',
   });
 
   console.log('users seeded');

@@ -64,7 +64,7 @@ const typeDefs = gql`
       password: String
     ): User
     updateProduct(_id: ID!, quantity: Int!): Product
-    updateProductComment(comment: String!, _id: ID!): Product
+    updateProductComment(_id: ID!, comment: String!): Product
     login(email: String!, password: String!): Auth
   }
 `;
