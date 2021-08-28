@@ -14,7 +14,10 @@ import {
 import { QUERY_PRODUCTS } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
+<<<<<<< HEAD
 import { Rating } from "semantic-ui-react";
+=======
+>>>>>>> 2b957aa (minor changes)
 
 import {
   Container,
