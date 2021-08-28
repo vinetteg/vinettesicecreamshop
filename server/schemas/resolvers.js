@@ -128,6 +128,7 @@ const resolvers = {
         { new: true }
       );
     },
+ 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
