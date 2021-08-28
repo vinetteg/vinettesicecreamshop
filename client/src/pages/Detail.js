@@ -13,8 +13,6 @@ import {
 import { QUERY_PRODUCTS } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
-<<<<<<< HEAD
-=======
 
 import {
   Container,
@@ -24,7 +22,6 @@ import {
   Form,
   Checkbox,
 } from "semantic-ui-react";
->>>>>>> 981fdba7ae76bbad4099334e4b1d5c345fc49bc2
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
