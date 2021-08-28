@@ -104,6 +104,7 @@ const [ addComment, {error} ] = useMutation(UPDATE_COMMENT);
                   comment: comment,
 
                 });
+                // comments are being saved in currentProduct._id
     await addComment({
       variables: {
         _id: currentProduct._id, 
