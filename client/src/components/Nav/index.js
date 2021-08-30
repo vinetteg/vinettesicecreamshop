@@ -1,6 +1,8 @@
 import React, { Component, createRef } from "react";
+import "./style.css";
 import _ from "lodash";
 import Auth from "../../utils/auth";
+import CategoryMenu from "../CategoryMenu";
 import { Link } from "react-router-dom";
 import {
   Container,
@@ -72,6 +74,7 @@ export default class Nav extends Component {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   return (
     <header className="flex-row px-1">
       <h1>
@@ -82,6 +85,9 @@ export default class Nav extends Component {
 =======
   stickOverlay = () => this.setState({ overlayFixed: true });
 >>>>>>> 51ea80dc1f9c2e829a3bcf3297ab71b408b64aa8
+=======
+  stickOverlay = () => this.setState({ overlayFixed: true });
+>>>>>>> a5c345f603f32f0d7b93f9506ced901c5e6c29e7
 
   stickTopMenu = () => this.setState({ menuFixed: true });
 
@@ -94,46 +100,57 @@ export default class Nav extends Component {
     function showNavigation() {
       if (Auth.loggedIn()) {
         return (
-          <Segment>
-            <ul className="flex-row">
-              <li className="mx-1">
-                <Link to="/orderHistory">Order History</Link>
-              </li>
-              <li className="mx-1">
-                {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-                <a href="/" onClick={() => Auth.logout()}>
-                  Logout
-                </a>
-              </li>
-            </ul>
-          </Segment>
+          <List class="ui horizontal list">
+            <List.Item class="item">
+              <Link to="/orderHistory">
+                <Icon link name="signup" size="big" id="navbtn" />
+              </Link>
+            </List.Item>
+            <List.Item class="item">
+              {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+              <a href="/" onClick={() => Auth.logout()}>
+                <Icon link name="log out" size="big" id="navbtn" />
+              </a>
+            </List.Item>
+          </List>
         );
       } else {
         return (
-          <ul className="flex-row">
-            <li className="mx-1">
-              <Link to="/signup">Signup</Link>
-            </li>
-            <li className="mx-1">
-              <Link to="/login">Login</Link>
-            </li>
-          </ul>
+          <List class="ui horizontal list">
+            <List.Item class="item">
+              <Link to="/signup">
+                <Icon link name="signup" size="big" id="navbtn" />
+              </Link>
+            </List.Item>
+            <List.Item class="item">
+              <Link to="/login">
+                <Icon link name="user outline" size="big" id="navbtn" />
+              </Link>
+            </List.Item>
+          </List>
         );
       }
     }
-
     return (
-      <header className="flex-row px-1">
-        <h1>
+      <header text style={{ marginTop: "2em" }} className="flex-row px-1">
+        <div>
           <Link to="/">
-            <span role="img" aria-label="shopping bag">
-              🍦
+            <span>
+              <Image
+                src={`/images/vicsLogo.png`}
+                alt="logo"
+                id="mainLogo"
+                size="tiny"
+                circular
+                ß
+              />
             </span>
-            Vinette's Ice Cream Shop
           </Link>
-        </h1>
-
-        <nav>{showNavigation()}</nav>
+        </div>
+        <nav>
+          <CategoryMenu />
+        </nav>
+        {showNavigation()}
       </header>
     );
   }

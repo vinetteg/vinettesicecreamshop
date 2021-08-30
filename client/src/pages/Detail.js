@@ -1,18 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
-import Cart from '../components/Cart';
-import { useStoreContext } from '../utils/GlobalState';
+import Cart from "../components/Cart";
+import { useStoreContext } from "../utils/GlobalState";
 import {
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
   ADD_TO_CART,
   UPDATE_PRODUCTS,
-} from '../utils/actions';
-import { QUERY_PRODUCTS } from '../utils/queries';
-import { idbPromise } from '../utils/helpers';
-import spinner from '../assets/spinner.gif';
+  UPDATE_PRODUCTS_COMMENT,
+} from "../utils/actions";
+import { QUERY_PRODUCTS } from "../utils/queries";
+import { idbPromise } from "../utils/helpers";
+import spinner from "../assets/spinner.gif";
+import { Rating } from "semantic-ui-react";
+
+import {
+  Container,
+  Header,
+  Comment,
+  Button,
+  Form,
+  Checkbox,
+} from "semantic-ui-react";
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -37,12 +48,12 @@ function Detail() {
       });
 
       data.products.forEach((product) => {
-        idbPromise('products', 'put', product);
+        idbPromise("products", "put", product);
       });
     }
     // get cache from idb
     else if (!loading) {
-      idbPromise('products', 'get').then((indexedProducts) => {
+      idbPromise("products", "get").then((indexedProducts) => {
         dispatch({
           type: UPDATE_PRODUCTS,
           products: indexedProducts,
@@ -59,7 +70,7 @@ function Detail() {
         _id: id,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
-      idbPromise('cart', 'put', {
+      idbPromise("cart", "put", {
         ...itemInCart,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1,
       });
@@ -68,7 +79,7 @@ function Detail() {
         type: ADD_TO_CART,
         product: { ...currentProduct, purchaseQuantity: 1 },
       });
-      idbPromise('cart', 'put', { ...currentProduct, purchaseQuantity: 1 });
+      idbPromise("cart", "put", { ...currentProduct, purchaseQuantity: 1 });
     }
   };
 
@@ -78,7 +89,7 @@ function Detail() {
       _id: currentProduct._id,
     });
 
-    idbPromise('cart', 'delete', { ...currentProduct });
+    idbPromise("cart", "delete", { ...currentProduct });
   };
 
   return (
@@ -92,7 +103,7 @@ function Detail() {
           <p>{currentProduct.description}</p>
 
           <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
+            <strong>Price:</strong>${currentProduct.price}{" "}
             <button onClick={addToCart}>Add to Cart</button>
             <button
               disabled={!cart.find((p) => p._id === currentProduct._id)}
@@ -106,9 +117,98 @@ function Detail() {
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
           />
+
+          <Container fluid>
+            <Comment.Group minimal>
+              <Header as="h3" dividing>
+                Comments:
+              </Header>
+            </Comment.Group>
+            <Comment>
+              <Comment.Content>
+                <Rating icon="heart" defaultRating={1} maxRating={3} />
+                <Comment.Author as="a">Matt</Comment.Author>
+                <Comment.Metadata>
+                  <div>Today at 5:42PM</div>
+                </Comment.Metadata>
+                <Comment.Text>How artistic!</Comment.Text>
+                <Comment.Actions>
+                  <Comment.Action>Reply</Comment.Action>
+                </Comment.Actions>
+              </Comment.Content>
+            </Comment>
+
+            <Comment>
+              <Comment.Content>
+                <Comment.Author as="a">Elliot Fu</Comment.Author>
+                <Comment.Metadata>
+                  <div>Yesterday at 12:30AM</div>
+                </Comment.Metadata>
+                <Comment.Text>
+                  <p>
+                    This has been very useful for my research. Thanks as well!
+                  </p>
+                </Comment.Text>
+                <Comment.Actions>
+                  <Comment.Action>Reply</Comment.Action>
+                </Comment.Actions>
+              </Comment.Content>
+              <Comment.Group>
+                <Comment>
+                  <Comment.Content>
+                    <Comment.Author as="a">Jenny Hess</Comment.Author>
+                    <Comment.Metadata>
+                      <div>Just now</div>
+                    </Comment.Metadata>
+                    <Comment.Text>
+                      Elliot you are always so right :)
+                    </Comment.Text>
+                    <Comment.Actions>
+                      <Comment.Action>Reply</Comment.Action>
+                    </Comment.Actions>
+                  </Comment.Content>
+                </Comment>
+              </Comment.Group>
+            </Comment>
+
+            <Comment>
+              <Comment.Content>
+                <Comment.Author as="a">Joe Henderson</Comment.Author>
+                <Comment.Metadata>
+                  <div>5 days ago</div>
+                </Comment.Metadata>
+                <Comment.Text>
+                  Dude, this is awesome. Thanks so much
+                </Comment.Text>
+                <Comment.Actions>
+                  <Comment.Action>Tell us what you think:</Comment.Action>
+                </Comment.Actions>
+              </Comment.Content>
+            </Comment>
+
+            <Form
+              reply
+              onSubmit={(event) => {
+                event.preventDefault();
+                console.log("submitting .... ", event);
+                dispatch({
+                  type: UPDATE_PRODUCTS_COMMENT,
+                  _id: 1,
+                  comment: "hot dog are dank",
+                });
+              }}
+            >
+              <Form.TextArea />
+              <Form.Field
+                control={Checkbox}
+                label="I agree to the Terms and Conditions"
+              />
+              <Form.Button type="submit" fluid color="blue" />
+            </Form>
+          </Container>
         </div>
       ) : null}
-      {loading ? <img src={spinner} alt="loading" /> : null}
+      ){loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />
     </>
   );

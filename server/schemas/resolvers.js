@@ -128,6 +128,18 @@ const resolvers = {
         { new: true }
       );
     },
+    updateProductComment: async (parent, args, context) => {
+      console.log("hell yeah!", args);
+      if (context.user) {
+        return await Product.findByIdAndUpdate(
+          args._id,
+          { $push: { comments: args.comment } },
+          {
+            new: true,
+          }
+        );
+      }
+    },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 

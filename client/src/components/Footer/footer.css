@@ -1,7 +1,8 @@
 .footer-input {
   text-align: center;
-  background-color: aquamarine;
+  background-color: #d889e8;
   margin: 5px 5px 5px 5px;
+  color: #1a0257;
 }
 
 h4.ui.header {
@@ -33,4 +34,10 @@ a.facebook {
 
 a.instagram {
   color: black;
+}
+
+h3.ui.header {
+  font-family: "Pacifico", cursive;
+  color: #1a0257;
+  text-shadow: 1px 1px #ffffff;
 }
