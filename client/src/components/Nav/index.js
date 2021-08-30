@@ -16,6 +16,7 @@ import {
   Menu,
   Segment,
   Visibility,
+  Sticky
 } from "semantic-ui-react";
 
 const menuStyle = {
@@ -55,6 +56,8 @@ const fixedOverlayMenuStyle = {
   ...overlayMenuStyle,
   left: "800px",
 };
+
+contextRef = createRef()
 
 export default class Nav extends Component {
   state = {
@@ -147,11 +150,19 @@ export default class Nav extends Component {
             </span>
           </Link>
         </div>
-        <nav>
+        <Visibility onBottomPassed={this.stickTopMenu}
+        onBottomVisible={this.unStickTopMenu}
+        once={false}>
+        <nav fixed={menuFixed ? 'top' : undefined}
+        style={menuFixed ? fixedMenuStyle : menuStyle}
+        >
           <CategoryMenu />
         </nav>
         {showNavigation()}
+       
+        
+        </Visibility>
       </header>
-    );
+    )
   }
 }
