@@ -1,6 +1,5 @@
 import React, { Component, createRef } from "react";
 import _ from "lodash";
-import _ from "lodash";
 import Auth from "../../utils/auth";
 import CategoryMenu from "../CategoryMenu";
 import { Link } from "react-router-dom";
