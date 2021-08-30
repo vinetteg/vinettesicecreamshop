@@ -10,6 +10,8 @@ import { idbPromise } from "../../utils/helpers";
 import { List } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
 import { Container, Header } from "semantic-ui-react";
+import "../CategoryMenu/style.css";
+import Flip from "react-reveal/Pulse";
 
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
@@ -46,17 +48,19 @@ function CategoryMenu() {
 
   return (
     <div>
-      <h2>Choose a Category:</h2>
       <Container fluid>
         {categories.map((item) => (
-          <button
-            key={item._id}
-            onClick={() => {
-              handleClick(item._id);
-            }}
-          >
-            {item.name}
-          </button>
+          <Flip>
+            <button
+              id="menuBtn"
+              key={item._id}
+              onClick={() => {
+                handleClick(item._id);
+              }}
+            >
+              {item.name}
+            </button>
+          </Flip>
         ))}{" "}
       </Container>
     </div>
