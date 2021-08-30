@@ -14,10 +14,7 @@ import {
 import { QUERY_PRODUCTS } from "../utils/queries";
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
-<<<<<<< HEAD
 import { Rating } from "semantic-ui-react";
-=======
->>>>>>> 2b957aa (minor changes)
 
 import {
   Container,
@@ -211,7 +208,7 @@ function Detail() {
           </Container>
         </div>
       ) : null}
-      {loading ? <img src={spinner} alt="loading" /> : null}
+      ){loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />
     </>
   );

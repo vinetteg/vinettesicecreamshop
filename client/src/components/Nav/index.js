@@ -1,4 +1,5 @@
 import React, { Component, createRef } from "react";
+import "./style.css";
 import _ from "lodash";
 import Auth from "../../utils/auth";
 import CategoryMenu from "../CategoryMenu";
@@ -84,31 +85,31 @@ export default class Nav extends Component {
     function showNavigation() {
       if (Auth.loggedIn()) {
         return (
-          <List celled horizontal id="navbtn">
-            <List.Item>
+          <List class="ui horizontal list">
+            <List.Item class="item">
               <Link to="/orderHistory">
-                <Icon link name="signup" size="big" />
+                <Icon link name="signup" size="big" id="navbtn" />
               </Link>
             </List.Item>
-            <List.Item>
+            <List.Item class="item">
               {/* this is not using the Link component to logout or user and then refresh the application to the start */}
               <a href="/" onClick={() => Auth.logout()}>
-                <Icon link name="log out" size="big" />
+                <Icon link name="log out" size="big" id="navbtn" />
               </a>
             </List.Item>
           </List>
         );
       } else {
         return (
-          <List celled horizontal id="navbtn">
-            <List.Item>
+          <List class="ui horizontal list">
+            <List.Item class="item">
               <Link to="/signup">
-                <Icon link name="signup" size="big" />
+                <Icon link name="signup" size="big" id="navbtn" />
               </Link>
             </List.Item>
-            <List.Item>
+            <List.Item class="item">
               <Link to="/login">
-                <Icon link name="user outline" size="big" />
+                <Icon link name="user outline" size="big" id="navbtn" />
               </Link>
             </List.Item>
           </List>
@@ -116,13 +117,14 @@ export default class Nav extends Component {
       }
     }
     return (
-      <header className="flex-row px-1">
+      <header text style={{ marginTop: "2em" }} className="flex-row px-1">
         <div>
           <Link to="/">
             <span>
               <Image
                 src={`/images/vicsLogo.png`}
-                alt=""
+                alt="logo"
+                id="mainLogo"
                 size="tiny"
                 circular
                 ß
@@ -131,9 +133,9 @@ export default class Nav extends Component {
           </Link>
         </div>
         <nav>
-          {showNavigation()}
           <CategoryMenu />
         </nav>
+        {showNavigation()}
       </header>
     );
   }
