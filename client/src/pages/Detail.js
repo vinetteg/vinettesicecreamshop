@@ -114,13 +114,16 @@ const [ addComment, {error} ] = useMutation(UPDATE_COMMENT);
   }
   return (
     <>
-      {currentProduct && cart ? (
+      {currentProduct && cart && comments ? (
         <div className="container my-1">
           <Link to="/">← Back to Products</Link>
 
           <h2>{currentProduct.name}</h2>
-
           <p>{currentProduct.description}</p>
+         
+
+       
+
 
           <p>
             <strong>Price:</strong>${currentProduct.price}{" "}
@@ -136,7 +139,9 @@ const [ addComment, {error} ] = useMutation(UPDATE_COMMENT);
           <img
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
+            
           />
+           <p>{currentProduct.comments.map(comment._id)}</p>
 
           <Container fluid>
             <Comment.Group minimal>
@@ -144,7 +149,7 @@ const [ addComment, {error} ] = useMutation(UPDATE_COMMENT);
                 Comments:
               </Header>
             </Comment.Group>
-            <Comment>
+            {/* <Comment>
               <Comment.Content>
                 <Rating icon="heart" defaultRating={1} maxRating={3} />
                 <Comment.Author as="a">Matt</Comment.Author>
@@ -204,7 +209,8 @@ const [ addComment, {error} ] = useMutation(UPDATE_COMMENT);
                   <Comment.Action>Tell us what you think:</Comment.Action>
                 </Comment.Actions>
               </Comment.Content>
-            </Comment>
+            </Comment> */}
+            {/* insert code here */}
 
             <Form
               reply
