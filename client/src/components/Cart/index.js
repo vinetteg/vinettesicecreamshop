@@ -11,7 +11,7 @@ import "./style.css";
 import { Icon } from "semantic-ui-react";
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
@@ -31,7 +31,7 @@ const Cart = () => {
   // If so, invoke the getCart method and populate the cart with the existing from the session
   useEffect(() => {
     async function getCart() {
-      const cart = await idbPromise('cart', 'get');
+      const cart = await idbPromise("cart", "get");
       dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
     }
 
@@ -86,6 +86,10 @@ const Cart = () => {
       <h2>
         Shopping Cart <Icon circular name="shopping basket" />
       </h2>
+      <div class="ui tiny active violet progress">
+        <div class="bar"></div>
+      </div>
+      <h6>Spend $1,000,000 for free shipping</h6>
       {state.cart.length ? (
         <div>
           {state.cart.map((item) => (
