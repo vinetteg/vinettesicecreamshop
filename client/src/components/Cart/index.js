@@ -86,6 +86,10 @@ const Cart = () => {
       <h2>
         Shopping Cart <Icon name="shopping basket" id="basket" />
       </h2>
+      <div class="ui tiny active violet progress">
+        <div class="bar"></div>
+      </div>
+      <h6>Spend $1,000,000 for free shipping</h6>
       {state.cart.length ? (
         <div>
           {state.cart.map((item) => (
