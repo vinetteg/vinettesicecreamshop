@@ -208,7 +208,7 @@ function Detail() {
           </Container>
         </div>
       ) : null}
-      {loading ? <img src={spinner} alt="loading" /> : null}
+      ){loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />
     </>
   );
