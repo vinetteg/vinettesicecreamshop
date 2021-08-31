@@ -1,13 +1,13 @@
 .cart .close {
   color: #fafafa;
   position: relative;
-  top: 25px;
-  right: 65px;
-  font-size: 35px;
+  /* top: 25px; */
+  /* right: 65px; */
+  font-size: 20px;
   cursor: pointer;
   padding: 0.25rem;
-  width: 50px;
-  height: 50px;
+  /* width: 50px;
+  height: 50px; */
   text-shadow: 2px 3px 5px #89e5e8;
   border: none;
   background-color: transparent;
@@ -30,11 +30,6 @@
   background-color: transparent;
   flex-direction: row;
   display: flex;
-}
-
-.cart-closed:hover {
-  opacity: 0.9 !important;
-  color: #fafafa !important;
 }
 
 .cart input {
@@ -67,4 +62,9 @@ h6 {
   padding: -5px 5px 5px 5px;
   color: #1a0257;
   text-shadow: 1px 1px #d889e8;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Pacifico", cursive;
 }
