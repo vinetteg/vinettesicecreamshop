@@ -27,7 +27,7 @@ i#basket {
   display: flex;
   flex-direction: row;
   left: 130px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 i#basket:hover {
