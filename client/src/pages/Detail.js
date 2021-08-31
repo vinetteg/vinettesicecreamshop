@@ -92,6 +92,8 @@ function Detail() {
     idbPromise("cart", "delete", { ...currentProduct });
   };
 
+  const handleAddComment = () => {};
+
   return (
     <>
       {currentProduct && cart ? (
