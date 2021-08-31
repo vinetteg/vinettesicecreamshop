@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import { Icon, Image, List, Sticky } from "semantic-ui-react";
 
 export default class Nav extends Component {
-
   contextRef = createRef();
 
   render() {
@@ -48,7 +47,11 @@ export default class Nav extends Component {
     }
     return (
       <Sticky>
-        <header className="flex-row px-1" ref={this.contextRef}>
+        <header
+          className="flex-row px-1"
+          ref={this.contextRef}
+          class="ui stackable four column grid"
+        >
           <Link to="/" attached="top" context={this.contextRef}>
             <span>
               <Image
@@ -65,7 +68,7 @@ export default class Nav extends Component {
             <CategoryMenu />
           </nav>
           {showNavigation()}
-          <Cart />
+          <Cart attached="bottom" />
         </header>
       </Sticky>
     );
