@@ -1,0 +1,40 @@
+header {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+#mainLogo {
+  max-width: 100%;
+  width: 100px;
+  height: 100px;
+  flex-direction: row;
+}
+
+i#navbtn {
+  color: #fafafa;
+  text-shadow: 2px 3px 5px #89e5e8;
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  position: relative;
+  left: 50px;
+  top: 30px;
+  margin-right: 5px !important;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+i#basket {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  left: 130px;
+  opacity: 0.9;
+}
+
+i#basket:hover {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  left: 130px !important;
+  opacity: 0.9 !important;
+  color: #fafafa !important;
+}
