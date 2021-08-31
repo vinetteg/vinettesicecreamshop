@@ -1,0 +1,20 @@
+#mainLogo {
+  max-width: 100%;
+  width: 100px;
+  height: 100px;
+  flex-direction: row;
+}
+
+i#navbtn {
+  color: #fafafa;
+  text-shadow: 2px 3px 5px #89e5e8;
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  position: relative;
+  left: 50px;
+  top: 30px;
+  margin-right: 5px !important;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
