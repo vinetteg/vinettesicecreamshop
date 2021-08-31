@@ -8,7 +8,9 @@ import Auth from "../../utils/auth";
 import { useStoreContext } from "../../utils/GlobalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import "./style.css";
+// import { Button } from "semantic-ui-react";
 import { Icon } from "semantic-ui-react";
+
 
 // stripePromise returns a promise with the stripe object as soon as the Stripe package loads
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -72,7 +74,7 @@ const Cart = () => {
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="trash">
-          <Icon circular name="shopping basket" />
+          <Icon name="shopping basket" id="basket" />
         </span>
       </div>
     );
@@ -84,7 +86,7 @@ const Cart = () => {
         [close]
       </div>
       <h2>
-        Shopping Cart <Icon circular name="shopping basket" />
+        Shopping Cart <Icon name="shopping basket" id="basket" />
       </h2>
       <div class="ui tiny active violet progress">
         <div class="bar"></div>
