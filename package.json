@@ -17,16 +17,10 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
-<<<<<<< HEAD
-=======
->>>>>>> 3590d60 (committing on main)
-=======
     "react-reveal": "^1.2.2",
->>>>>>> d14a06f (completed menu items list on navbar)
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3"
   }
