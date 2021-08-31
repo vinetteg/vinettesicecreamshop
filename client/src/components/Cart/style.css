@@ -32,11 +32,6 @@
   display: flex;
 }
 
-.cart-closed:hover {
-  opacity: 0.9 !important;
-  color: #fafafa !important;
-}
-
 .cart input {
   width: 50px;
   padding: 0;
