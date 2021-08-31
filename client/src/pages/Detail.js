@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
 
-
 import Cart from "../components/Cart";
 import { useStoreContext } from "../utils/GlobalState";
 import {
@@ -13,7 +12,7 @@ import {
   UPDATE_PRODUCTS_COMMENT,
 } from "../utils/actions";
 import { QUERY_PRODUCTS } from "../utils/queries";
-import {UPDATE_COMMENT} from "../utils/mutations";
+import { UPDATE_PRODUCT_COMMENT } from "../utils/mutations";
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
 import { Rating } from "semantic-ui-react";
@@ -35,7 +34,7 @@ function Detail() {
   const [comment, setComment] = useState("");
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-const [ addComment, {error} ] = useMutation(UPDATE_COMMENT);
+  const [addComment, { error }] = useMutation(UPDATE_PRODUCT_COMMENT);
   const { products, cart } = state;
 
   useEffect(() => {
@@ -92,38 +91,32 @@ const [ addComment, {error} ] = useMutation(UPDATE_COMMENT);
       _id: currentProduct._id,
     });
 
-
     idbPromise("cart", "delete", { ...currentProduct });
   };
   const handleAddComment = async (e) => {
     e.preventDefault();
-                console.log("submitting .... ", e);
-                dispatch({
-                  type: UPDATE_PRODUCTS_COMMENT,
-                  _id: 1,
-                  comment: comment,
-
-                });
-                // comments are being saved in currentProduct._id
+    console.log("submitting .... ", e);
+    dispatch({
+      type: UPDATE_PRODUCTS_COMMENT,
+      _id: 1,
+      comment: comment,
+    });
+    // comments are being saved in currentProduct._id
     await addComment({
       variables: {
-        _id: currentProduct._id, 
+        _id: currentProduct._id,
         comment: comment,
-      }
-    })
-  }
+      },
+    });
+  };
   return (
     <>
-      {currentProduct && cart && comments ? (
+      {currentProduct && cart && comment ? (
         <div className="container my-1">
           <Link to="/">← Back to Products</Link>
 
           <h2>{currentProduct.name}</h2>
           <p>{currentProduct.description}</p>
-         
-
-       
-
 
           <p>
             <strong>Price:</strong>${currentProduct.price}{" "}
@@ -139,9 +132,8 @@ const [ addComment, {error} ] = useMutation(UPDATE_COMMENT);
           <img
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
-            
           />
-           <p>{currentProduct.comments.map(comment._id)}</p>
+          <p>{currentProduct.comments.map(comment._id)}</p>
 
           <Container fluid>
             <Comment.Group minimal>
@@ -212,11 +204,11 @@ const [ addComment, {error} ] = useMutation(UPDATE_COMMENT);
             </Comment> */}
             {/* insert code here */}
 
-            <Form
-              reply
-              onSubmit={handleAddComment}
-            >
-              <Form.TextArea value={comment} onChange={(e) => setComment(e.target.value) }/>
+            <Form reply onSubmit={handleAddComment}>
+              <Form.TextArea
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+              />
               <Form.Field
                 control={Checkbox}
                 label="I agree to the Terms and Conditions"
@@ -229,8 +221,8 @@ const [ addComment, {error} ] = useMutation(UPDATE_COMMENT);
       {loading ? <img src={spinner} alt="loading" /> : null}
       <Cart />
     </>
-  
-  )};
+  );
+}
 export default Detail;
 
 // import React, { useEffect, useState } from "react";
