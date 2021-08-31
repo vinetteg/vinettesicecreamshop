@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
+
 import Cart from "../components/Cart";
 import { useStoreContext } from "../utils/GlobalState";
 import {
@@ -11,6 +12,9 @@ import {
   UPDATE_PRODUCTS_COMMENT,
 } from "../utils/actions";
 import { QUERY_PRODUCTS } from "../utils/queries";
+
+// import { UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
+
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
 import { Rating } from "semantic-ui-react";
@@ -115,6 +119,7 @@ function Detail() {
 
           <h2>{currentProduct.name}</h2>
           <p>{currentProduct.description}</p>
+
           <p>
             <strong>Price:</strong>${currentProduct.price}{" "}
             <button onClick={addToCart}>Add to Cart</button>
