@@ -3,100 +3,15 @@ import "./style.css";
 import _ from "lodash";
 import Auth from "../../utils/auth";
 import CategoryMenu from "../CategoryMenu";
+import Cart from "../Cart";
 import { Link } from "react-router-dom";
-import {
-  Container,
-  Divider,
-  Dropdown,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Segment,
-  Visibility,
-} from "semantic-ui-react";
-
-const menuStyle = {
-  border: "none",
-  borderRadius: 0,
-  boxShadow: "none",
-  marginBottom: "1em",
-  marginTop: "4em",
-  transition: "box-shadow 0.5s ease, padding 0.5s ease",
-};
-
-const fixedMenuStyle = {
-  backgroundColor: "#fff",
-  border: "1px solid #ddd",
-  boxShadow: "0px 3px 5px rgba(0, 0, 0, 0.2)",
-};
-
-const overlayStyle = {
-  float: "left",
-  margin: "0em 3em 1em 0em",
-};
-
-const fixedOverlayStyle = {
-  ...overlayStyle,
-  position: "fixed",
-  top: "80px",
-  zIndex: 10,
-};
-
-const overlayMenuStyle = {
-  position: "relative",
-  left: 0,
-  transition: "left 0.5s ease",
-};
-
-const fixedOverlayMenuStyle = {
-  ...overlayMenuStyle,
-  left: "800px",
-};
+import { Icon, Image, List, Sticky } from "semantic-ui-react";
 
 export default class Nav extends Component {
-  state = {
-    menuFixed: false,
-    overlayFixed: false,
-  };
 
-  handleOverlayRef = (c) => {
-    const { overlayRect } = this.state;
-
-    if (!overlayRect) {
-      this.setState({
-        overlayRect: _.pick(c.getBoundingClientRect(), "height", "width"),
-      });
-    }
-  };
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  return (
-    <header className="flex-row px-1">
-      <h1>
-        <Link to="/products/:id">
-=======
-  stickOverlay = () => this.setState({ overlayFixed: true });
->>>>>>> 51ea80dc1f9c2e829a3bcf3297ab71b408b64aa8
-=======
-  stickOverlay = () => this.setState({ overlayFixed: true });
->>>>>>> 51ea80dc1f9c2e829a3bcf3297ab71b408b64aa8
-=======
-  stickOverlay = () => this.setState({ overlayFixed: true });
->>>>>>> a5c345f603f32f0d7b93f9506ced901c5e6c29e7
-
-  stickTopMenu = () => this.setState({ menuFixed: true });
-
-  unStickOverlay = () => this.setState({ overlayFixed: false });
-
-  unStickTopMenu = () => this.setState({ menuFixed: false });
+  contextRef = createRef();
 
   render() {
-    const { menuFixed, overlayFixed, overlayRect } = this.state;
     function showNavigation() {
       if (Auth.loggedIn()) {
         return (
@@ -132,9 +47,9 @@ export default class Nav extends Component {
       }
     }
     return (
-      <header text style={{ marginTop: "2em" }} className="flex-row px-1">
-        <div>
-          <Link to="/">
+      <Sticky>
+        <header className="flex-row px-1" ref={this.contextRef}>
+          <Link to="/" attached="top" context={this.contextRef}>
             <span>
               <Image
                 src={`/images/vicsLogo.png`}
@@ -146,12 +61,13 @@ export default class Nav extends Component {
               />
             </span>
           </Link>
-        </div>
-        <nav>
-          <CategoryMenu />
-        </nav>
-        {showNavigation()}
-      </header>
+          <nav>
+            <CategoryMenu />
+          </nav>
+          {showNavigation()}
+          <Cart />
+        </header>
+      </Sticky>
     );
   }
 }

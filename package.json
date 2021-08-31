@@ -17,30 +17,10 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
->>>>>>> 51ea80dc1f9c2e829a3bcf3297ab71b408b64aa8
-=======
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.15",
->>>>>>> 51ea80dc1f9c2e829a3bcf3297ab71b408b64aa8
-=======
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.15",
-<<<<<<< HEAD
-=======
->>>>>>> 3590d60 (committing on main)
-=======
     "react-reveal": "^1.2.2",
->>>>>>> d14a06f (completed menu items list on navbar)
->>>>>>> a5c345f603f32f0d7b93f9506ced901c5e6c29e7
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3"
   }
