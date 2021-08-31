@@ -12,8 +12,7 @@
   top: 16px;
   border: none;
 }
-h1,
-h2 {
+h1 {
   color: #fafafa;
   text-shadow: 2px 6px 7px #d889e8, 1px 10px 1px #572458,
     1px 18px 6px rgba(203, 112, 221, 0.726);
