@@ -13,7 +13,7 @@ import {
 } from "../utils/actions";
 import { QUERY_PRODUCTS } from "../utils/queries";
 
-// import { UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
+import { MUTATION_UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
 
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
@@ -36,7 +36,7 @@ function Detail() {
   const [comment, setComment] = useState("");
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-  const [addComment, { error }] = useMutation(UPDATE_PRODUCTS_COMMENT);
+  const [addComment, { error }] = useMutation(MUTATION_UPDATE_PRODUCTS_COMMENT);
   const { products, cart } = state;
 
   useEffect(() => {
