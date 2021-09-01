@@ -16,9 +16,15 @@ import {
 } from "../utils/actions";
 import { QUERY_PRODUCTS } from "../utils/queries";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 // import { UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
 >>>>>>> 3caafc5 (Adding a couple small fixes to cart)
+=======
+
+import { MUTATE_UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
+
+>>>>>>> 71df7a2 (deploying)
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
 import { Rating } from "semantic-ui-react";
@@ -40,7 +46,7 @@ function Detail() {
   const [comment, setComment] = useState("");
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-  const [addComment, { error }] = useMutation(UPDATE_PRODUCTS_COMMENT);
+  const [addComment, { error }] = useMutation(MUTATE_UPDATE_PRODUCTS_COMMENT);
   const { products, cart } = state;
 
   useEffect(() => {
