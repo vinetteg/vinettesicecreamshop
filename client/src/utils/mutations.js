@@ -50,7 +50,7 @@ export const ADD_USER = gql`
   }
 `;
 
-export const UPDATE_PRODUCT_COMMENT = gql`
+export const MUTATE_UPDATE_PRODUCTS_COMMENT = gql`
   mutation updateProductComment($_id: ID!, $comment: String!) {
     updateProductComment(_id: $_id, comment: $comment) {
       token
