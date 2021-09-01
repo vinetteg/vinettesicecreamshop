@@ -113,7 +113,7 @@ function Detail() {
   };
   return (
     <>
-      {currentProduct && cart && comment ? (
+      {currentProduct && cart ? (
         <div className="container my-1">
           <Link to="/">← Back to Products</Link>
 
@@ -135,7 +135,7 @@ function Detail() {
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
           />
-          <p>{currentProduct.comments.map(comment._id)}</p>
+          <p>{currentProduct?.comments?.map(comment._id)}</p>
 
           <Container fluid>
             <Comment.Group minimal>

@@ -129,8 +129,8 @@ const resolvers = {
       );
     },
     updateProductComment: async (parent, args, context) => {
-      console.log("hell yeah!", args);
       if (context.user) {
+        console.log("hell yeah!", args);
         return await Product.findByIdAndUpdate(
           args._id,
           { $push: { comments: args.comment } },
