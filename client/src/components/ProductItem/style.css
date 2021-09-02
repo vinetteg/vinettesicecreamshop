@@ -60,7 +60,7 @@ h1.cardHeader {
   font-family: "Pacifico", cursive;
   /* margin-right: -92px !important; */
   color: #d889e8;
-  text-shadow: 2px 6px 7px #fafafa, 3px 2px 1px #37b7c0;
+  text-shadow: 2px 6px 7px #fafafa, -1px 1px 11px #37b7c0;
 }
 
 .ui.cards {

@@ -1,155 +1,244 @@
-const db = require('./connection');
-const { User, Product, Category } = require('../models');
+const db = require("./connection");
+const { User, Product, Category } = require("../models");
 
-db.once('open', async () => {
+db.once("open", async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: 'Ice Cream' },
-    { name: 'Gelato' },
-    { name: 'Frozen Yogurt' },
-    { name: 'Recipe Books' },
-    { name: 'Merchandise' }
+    { name: "Classics" },
+    { name: "Seasonal" },
+    { name: "Bundles" },
+    { name: "Recipe Books" },
+    { name: "Merchandise" },
   ]);
 
-  console.log('categories seeded');
+  console.log("categories seeded");
 
   await Product.deleteMany();
 
   const products = await Product.insertMany([
     {
-      name: 'Banana Pudding',
+      name: "Carmel Compel",
       description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'banana-pudding-icecream.jpg',
+        "Delicious ice cream with a touch of sea salt and carmel swirls in one! ",
+      image: "carmel.jpg",
       category: categories[0]._id,
       price: 13.99,
-      quantity: 500
+      quantity: 57,
     },
     {
-      name: 'Strawberry',
+      name: "Matcha Match",
       description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: 'strawberry-ice-cream.jpg',
+        "Meet your Matcha Math,  made with real Matcha that will transport you to a peaceful moment and awaken your senses ",
+      image: "greenCone.jpg",
       category: categories[0]._id,
       price: 13.99,
-      quantity: 500
+      quantity: 90,
     },
     {
-      name: 'Vanilla',
+      name: "Vanilla Dream",
       category: categories[0]._id,
       description:
-        'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'vanilla-ice-cream.jpg',
+        "A classic flavor that never disappoints. Made with a our perfect mix of fresh vanilla bean, that will make this your next go to flavor",
+      image: "vanillaScoop.jpg",
       price: 13.99,
-      quantity: 20
+      quantity: 44,
     },
     {
-      name: 'Strawberry Gelato',
+      name: "Morning Mocha ",
+      category: categories[0]._id,
+      description:
+        "A mocha ice cream that can be enjoyed anytime of the day. Really, it's that good",
+      image: "mocha.jpg",
+      price: 13.99,
+      quantity: 20,
+    },
+    {
+      name: "Very Berry Sorbet ",
+      category: categories[0]._id,
+      description:
+        "Our sorbet made of mixed fresh berries. It's a juicy, refreshing taste the is berry good",
+      image: "pinkRed.jpg",
+      price: 13.99,
+      quantity: 50,
+    },
+    {
+      name: "Takes 2 to Mango ",
+      category: categories[0]._id,
+      description:
+        "A tropical mango flavor that'll be the only thing you'll need in your life. Might as well order two. ",
+      image: "strpes.jpg",
+      price: 13.99,
+      quantity: 70,
+    },
+    {
+      name: "Cotton Candy",
       category: categories[1]._id,
       description:
-        'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'strawberry-gelato.jpg',
+        "A fun, blueberry cotton candy flavor. Enjoy for a limited time. ",
+      image: "twoPink.jpg",
       price: 13.99,
-      quantity: 50
+      quantity: 30,
     },
     {
-      name: 'Mango Gelato',
+      name: "Summertime Strawberry",
       category: categories[1]._id,
       description:
-        'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: 'mango-gelato.jpg',
+        "Summer is strawberry season! Enjoy this limited summer special now!",
+      image: "strawberryBeacj.jpg",
       price: 14.99,
-      quantity: 100
+      quantity: 20,
     },
     {
-      name: 'Pumpkin Frozen Yogurt',
+      name: "Chocolate Coconut Paradise",
+      category: categories[1]._id,
+      description:
+        "A coconut flavored ice cream  you'll want to enjoy every summer!",
+      image: "chocolateSpinkles.jpg",
+      price: 14.99,
+      quantity: 20,
+    },
+    {
+      name: "Raspberry Cherry Delight",
+      category: categories[1]._id,
+      description:
+        "Raspberry and cherry. The combo you didn't think you needed for summer.",
+      image: "twoYellow.jpg",
+      price: 14.99,
+      quantity: 20,
+    },
+    {
+      name: "Mystery One",
       category: categories[2]._id,
       description:
-        'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
-      image: 'pumpkin-frozen-yogurt.jpg',
-      price: 13.99,
-      quantity: 30
+        "Can't decide which one to pick? Let us pick for you! A surprise to look forward to. ",
+      image: "vanillaColor.jpg",
+      price: 12.99,
+      quantity: 30,
     },
     {
-      name: 'Green Tea Frozen Yogurt',
+      name: "Double Mystery",
       category: categories[2]._id,
       description:
-        'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
-      image: 'green-tea-frozen-yogurt.jpg',
-      price: 18.99,
-      quantity: 30
+        "A two flavor special bundle. You'll receive one classic flavor and one seasonal flavor.",
+      image: "twoScoops.jpg",
+      price: 28.99,
+      quantity: 10,
     },
     {
-      name: 'Ice Cream Recipe Book',
+      name: "Triple Mystery",
+      category: categories[2]._id,
+      description:
+        "Receive three assorted flavors. Either Classic or Seasonal flavors.",
+      image: "threePick.jpg",
+      price: 40.99,
+      quantity: 20,
+    },
+    {
+      name: "Mystery Pack Four",
+      category: categories[2]._id,
+      description: "Four delicious flavors picked and delivered just for you.",
+      image: "fourCones.jpg",
+      price: 60.99,
+      quantity: 23,
+    },
+    {
+      name: "VICS Recipe Book-Hardcover",
       category: categories[3]._id,
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
-      image: 'ice-creamirecipe-book.jpg',
-      price: 59.99,
-      quantity: 100
+        "Find a collection of some our favorite ice cream flavors and how you can also make them at home. Available in hardcover",
+      image: "hardCover.png",
+      price: 25.99,
+      quantity: 23,
     },
     {
-      name: 'Fanny pack',
-      category: categories[4]._id,
-      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      image: 'ice-cream-fanny.jpg',
-      price: 41.99,
-      quantity: 1000
-    },
-    {
-      name: 'Ice Cream Scoop',
-      category: categories[4]._id,
+      name: "VICS Recipe Book-Paperback",
+      category: categories[3]._id,
       description:
-        'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
-      image: 'scooper-ice.jpg',
-      price: 22.99,
-      quantity: 1000
-    },
-    {
-      name: 'T-Shrit',
-      category: categories[4]._id,
-      description:
-        'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
-      image: 'ice-cream-tshirt.jpg',
-      price: 39.99,
-      quantity: 100
-    },
-    {
-      name: 'Ice Cream Mug',
-      category: categories[4]._id,
-      description:
-        'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'ice-cream-coffee-cup.jpg',
+        "Find a collection of some our favorite ice cream flavors and how you can also make them at home. Available in paperback.",
+      image: "paperBack.png",
       price: 19.99,
-      quantity: 600
-    }
+      quantity: 23,
+    },
+    {
+      name: "VICS Logo T-shirt",
+      category: categories[4]._id,
+      description:
+        "Soft, pink shirt with our logo. Everyone looks good in pink",
+      image: "pinkShirt.png",
+      price: 22.99,
+      quantity: 100,
+    },
+    {
+      name: "VICS Logo Hoodie",
+      category: categories[4]._id,
+      description:
+        "Relax and enjoy your ice cream in our exclusive VICS hoodie. ",
+      image: "hoodieMerch.png",
+      price: 39.99,
+      quantity: 100,
+    },
+    {
+      name: "VICS Tote Bag",
+      category: categories[4]._id,
+      description:
+        "Get our special VICS tote bag. Great to carry your daily essentials.",
+      image: "bagMerch.png",
+      price: 19.99,
+      quantity: 100,
+    },
+    {
+      name: "VICS Bucket Hat",
+      category: categories[4]._id,
+      description:
+        "Look cool while enjoying some of our ice cream in our bucket hat!",
+      image: "bucketHatMerch.png",
+      price: 19.99,
+      quantity: 100,
+    },
+    {
+      name: "VICS Hat",
+      category: categories[4]._id,
+      description: "Our classic VICS baseball hat. ",
+      image: "bHat.png",
+      price: 19.99,
+      quantity: 100,
+    },
+    {
+      name: "VICS Tote Bag",
+      category: categories[4]._id,
+      description:
+        "Get our special VICS tote bag. Great to carry your daily essentials.",
+      image: "bagMerch.png",
+      price: 19.99,
+      quantity: 100,
+    },
   ]);
 
-  console.log('products seeded');
+  console.log("products seeded");
 
   await User.deleteMany();
 
   await User.create({
-    firstName: 'Pamela',
-    lastName: 'Washington',
-    email: 'pamela@testmail.com',
-    password: 'password12345',
+    firstName: "Pamela",
+    lastName: "Washington",
+    email: "pamela@testmail.com",
+    password: "password12345",
     orders: [
       {
-        products: [products[0]._id, products[0]._id, products[1]._id]
-      }
-    ]
+        products: [products[0]._id, products[0]._id, products[1]._id],
+      },
+    ],
   });
 
   await User.create({
-    firstName: 'Elijah',
-    lastName: 'Holt',
-    email: 'eholt@testmail.com',
-    password: 'password12345'
+    firstName: "Elijah",
+    lastName: "Holt",
+    email: "eholt@testmail.com",
+    password: "password12345",
   });
 
-  console.log('users seeded');
+  console.log("users seeded");
 
   process.exit();
 });
