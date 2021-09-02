@@ -13,7 +13,11 @@ import {
 } from "../utils/actions";
 import { QUERY_PRODUCTS } from "../utils/queries";
 
+<<<<<<< HEAD
 import { MUTATION_UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
+=======
+import { MUTATE_UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
+>>>>>>> e8118c3d560d07bf5eb07e930a7d87df7087c8b0
 
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
@@ -36,7 +40,11 @@ function Detail() {
   const [comment, setComment] = useState("");
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
+<<<<<<< HEAD
   const [addComment, { error }] = useMutation(MUTATION_UPDATE_PRODUCTS_COMMENT);
+=======
+  const [addComment, { error }] = useMutation(MUTATE_UPDATE_PRODUCTS_COMMENT);
+>>>>>>> e8118c3d560d07bf5eb07e930a7d87df7087c8b0
   const { products, cart } = state;
 
   useEffect(() => {
@@ -113,7 +121,7 @@ function Detail() {
   };
   return (
     <>
-      {currentProduct && cart && comment ? (
+      {currentProduct && cart ? (
         <div className="container my-1">
           <Link to="/">← Back to Products</Link>
 
@@ -135,7 +143,7 @@ function Detail() {
             src={`/images/${currentProduct.image}`}
             alt={currentProduct.name}
           />
-          <p>{currentProduct.comments.map(comment._id)}</p>
+          <p>{currentProduct?.comments?.map(comment._id)}</p>
 
           <Container fluid>
             <Comment.Group minimal>
@@ -206,16 +214,15 @@ function Detail() {
             </Comment> */}
             {/* insert code here */}
 
-            <Form reply onSubmit={handleAddComment}>
+            <Form onSubmit={handleAddComment}>
               <Form.TextArea
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
               />
-              <Form.Field
-                control={Checkbox}
-                label="I agree to the Terms and Conditions"
-              />
-              <Form.Button type="submit" fluid color="blue" />
+
+              <Form.Button type="submit" fluid color="blue">
+                Submit
+              </Form.Button>
             </Form>
           </Container>
         </div>

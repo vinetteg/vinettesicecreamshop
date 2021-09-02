@@ -1,6 +1,6 @@
 import React, { Component, createRef } from "react";
 import "./style.css";
-import _ from "lodash";
+
 import Auth from "../../utils/auth";
 import CategoryMenu from "../CategoryMenu";
 import Cart from "../Cart";
@@ -14,13 +14,13 @@ export default class Nav extends Component {
     function showNavigation() {
       if (Auth.loggedIn()) {
         return (
-          <List class="ui horizontal list">
-            <List.Item class="item">
+          <List className="ui horizontal list">
+            <List.Item className="item">
               <Link to="/orderHistory">
                 <Icon link name="signup" size="big" id="navbtn" />
               </Link>
             </List.Item>
-            <List.Item class="item">
+            <List.Item className="item">
               {/* this is not using the Link component to logout or user and then refresh the application to the start */}
               <a href="/" onClick={() => Auth.logout()}>
                 <Icon link name="log out" size="big" id="navbtn" />
@@ -30,13 +30,13 @@ export default class Nav extends Component {
         );
       } else {
         return (
-          <List class="ui horizontal list">
-            <List.Item class="item">
+          <List className="ui horizontal list">
+            <List.Item className="item">
               <Link to="/signup">
                 <Icon link name="signup" size="big" id="navbtn" />
               </Link>
             </List.Item>
-            <List.Item class="item">
+            <List.Item className="item">
               <Link to="/login">
                 <Icon link name="user outline" size="big" id="navbtn" />
               </Link>
@@ -48,9 +48,8 @@ export default class Nav extends Component {
     return (
       <Sticky>
         <header
-          className="flex-row px-1"
+          className="flex-row px-1 ui stackable four column grid"
           ref={this.contextRef}
-          class="ui stackable four column grid"
         >
           <Link to="/" attached="top" context={this.contextRef}>
             <span>
@@ -60,7 +59,6 @@ export default class Nav extends Component {
                 id="mainLogo"
                 size="tiny"
                 circular
-                ß
               />
             </span>
           </Link>
