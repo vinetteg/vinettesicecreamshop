@@ -47,7 +47,7 @@ h3.ui.header {
   position: relative;
   text-align: center;
   font-family: "Pacifico", cursive;
-  top: 5px;
+  
 }
 button.ui.button {
   height: 37px;
@@ -66,13 +66,11 @@ button.ui.button {
 }
 
 button.ui.button:hover {
-  opacity: 0.8;
+  background-color: #89e5e8;
+  opacity: 0.3;
 }
 
-button.ui.button[disabled] {
-  cursor: default;
-  opacity: 0.8;
-}
+
 
 input {
   border-radius: 60px;
