@@ -65,8 +65,21 @@ h6 {
   text-shadow: 1px 1px #d889e8;
 }
 
-h2 {
+h5 {
 
   text-align: center;
-  font-family: "Pacifico", cursive;
+  color: #fafafa;
+  text-shadow: 1px 3px 3px #d889e8, 1px 7px 1px #572458,
+  1px 9px 3px rgba(203, 112, 221, 0.726);
+  border: none;
+  background-color: transparent;
+  font-size: 30px !important;
+  position: relative;
+  font-family: "Pacifico", cursive !important;
+  left: 5px;
+  top: 5px;
+  bottom: 5px;
+  /* margin-right: 5px !important; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
 }
