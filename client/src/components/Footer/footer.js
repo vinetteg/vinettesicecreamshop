@@ -8,7 +8,7 @@ import SocialFollow from "./SocialFollow";
 
 function Footer() {
   return (
-    <div class="footer-input">
+    <div className="footer-input">
       <Header as="h3">Join our mailing list:</Header>{" "}
       <Input placeholder="gimme@icecream.com" />
       <Button> Join</Button>

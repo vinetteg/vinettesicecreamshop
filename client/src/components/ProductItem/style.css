@@ -1,0 +1,100 @@
+.cardContainer {
+  /* height: 400px !important;
+  width: 400px !important; */
+  /* margin: 50px auto !important; */
+  background-color: none;
+  border-radius: 7px 7px 7px 7px !important;
+  flex-direction: row !important;
+  display: flexbox !important;
+}
+.productImgSec img {
+  height: 210px !important;
+  width: 248px !important;
+  border-radius: 7px 0 0 7px;
+}
+
+div#cardCont {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.productImgSec {
+  float: left !important;
+  height: 350px !important;
+  background-color: transparent;
+}
+.productImgSec img {
+  max-width: 100%;
+  height: 259px !important;
+  width: 236px !important;
+  border-radius: 7px 0 0 7px;
+  margin-left: 30px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
+}
+
+.productInfo {
+  float: left !important;
+  height: 259px !important;
+  width: 292px !important;
+  border-radius: 0 7px 7px 0 !important;
+  background-color: #ffffff !important;
+  font-size: 16px !important;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
+}
+
+.cardTxt {
+  height: 190px !important;
+  width: 290px !important;
+}
+
+.cardP {
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 30px !important;
+}
+
+h1.cardHeader {
+  font-size: 23px !important;
+  font-family: "Pacifico", cursive;
+  /* margin-right: -92px !important; */
+  color: #d889e8;
+  text-shadow: 2px 6px 7px #fafafa, 3px 2px 1px #37b7c0;
+}
+
+.ui.cards {
+  display: flex;
+  margin-top: none;
+  flex-wrap: wrap;
+}
+
+#purchaseSec {
+  height: 103px;
+  width: 320px;
+  position: relative;
+  bottom: 20px;
+  flex-wrap: wrap;
+}
+
+button#addToCartBtn {
+  float: right;
+  height: 30px;
+  width: 180px;
+  margin: 0 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #fafafa;
+  background-color: #89e5e8;
+  cursor: pointer;
+  outline: none;
+}
+
+button#addToCartBtn:hover {
+  background-color: #89e5e8;
+  opacity: 0.5;
+}
