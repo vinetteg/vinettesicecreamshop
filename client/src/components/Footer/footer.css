@@ -3,15 +3,16 @@
   background-color: #d889e8;
   margin: 5px 5px 5px 5px;
   color: #1a0257;
+  
 }
 
 h4.ui.header {
   padding: 10px 30px;
 }
-button.ui.button {
+/* button.ui.button {
   padding: 5px 20px;
   margin: 5px 20px;
-}
+} */
 
 .social-container {
   padding: 5px 40px;
@@ -37,28 +38,40 @@ a.instagram {
 }
 
 h3.ui.header {
+  
+  color: #fafafa;
+  text-shadow: 2px 3px 5px #89e5e8;
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  position: relative;
+  text-align: center;
   font-family: "Pacifico", cursive;
-  color: #1a0257;
-  text-shadow: 1px 1px #ffffff;
+  
 }
 button.ui.button {
-  font-size: 1rem;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  margin: 10px 10px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  margin: 0 1px;
+  height: 37px;
+  width: 180px;
+  margin: 0 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #fafafa;
   background-color: #89e5e8;
-  font-family: "Lato", sans-serif;
+  cursor: pointer;
+  outline: none;
 }
 
 button.ui.button:hover {
-  opacity: 0.8;
+  background-color: #89e5e8;
+  opacity: 0.3;
 }
 
-button.ui.button[disabled] {
-  cursor: default;
-  opacity: 0.8;
+
+
+input {
+  border-radius: 60px;
 }

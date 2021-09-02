@@ -53,8 +53,9 @@
   }
 }
 
-h4 {
+h4.cartInfo {
   font-family: "Lato", sans-serif;
+  color: #1a0257;
 }
 
 h6 {
@@ -64,7 +65,16 @@ h6 {
   text-shadow: 1px 1px #d889e8;
 }
 
-h2 {
+h2.shoppingHeader {
+  color: #fafafa;
+  text-shadow: 2px 3px 5px #89e5e8;
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  position: relative;
   text-align: center;
   font-family: "Pacifico", cursive;
+  /* margin-right: 5px !important; */
+  /* flex-direction: row;
+  flex-wrap: wrap; */
 }
