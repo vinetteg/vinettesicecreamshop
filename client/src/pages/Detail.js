@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
-<<<<<<< HEAD
-=======
 
->>>>>>> 3caafc5 (Adding a couple small fixes to cart)
 import Cart from "../components/Cart";
 import { useStoreContext } from "../utils/GlobalState";
 import {
@@ -15,16 +12,11 @@ import {
   UPDATE_PRODUCTS_COMMENT,
 } from "../utils/actions";
 import { QUERY_PRODUCTS } from "../utils/queries";
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 // import { UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
->>>>>>> 3caafc5 (Adding a couple small fixes to cart)
-=======
 
 import { MUTATE_UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
 
->>>>>>> 71df7a2 (deploying)
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
 import { Rating } from "semantic-ui-react";
@@ -129,10 +121,6 @@ function Detail() {
 
           <h2>{currentProduct.name}</h2>
           <p>{currentProduct.description}</p>
-<<<<<<< HEAD
-=======
-
->>>>>>> 3caafc5 (Adding a couple small fixes to cart)
           <p>
             <strong>Price:</strong>${currentProduct.price}{" "}
             <button onClick={addToCart}>Add to Cart</button>
@@ -218,7 +206,6 @@ function Detail() {
               </Comment.Content>
             </Comment> */}
             {/* insert code here */}
-
             <Form onSubmit={handleAddComment}>
               <Form.TextArea
                 value={comment}
