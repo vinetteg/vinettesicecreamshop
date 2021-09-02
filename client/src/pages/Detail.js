@@ -219,16 +219,15 @@ function Detail() {
             </Comment> */}
             {/* insert code here */}
 
-            <Form reply onSubmit={handleAddComment}>
+            <Form onSubmit={handleAddComment}>
               <Form.TextArea
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
               />
-              <Form.Field
-                control={Checkbox}
-                label="I agree to the Terms and Conditions"
-              />
-              <Form.Button type="submit" fluid color="blue" />
+
+              <Form.Button type="submit" fluid color="blue">
+                Submit
+              </Form.Button>
             </Form>
           </Container>
         </div>
