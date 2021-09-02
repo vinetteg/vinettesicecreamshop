@@ -112,6 +112,7 @@ function Detail() {
       },
     });
   };
+
   return (
     <>
       {currentProduct && cart ? (
