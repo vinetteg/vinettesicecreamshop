@@ -61,7 +61,7 @@ function CategoryMenu() {
               {item.name}
             </button>
           </Flip>
-        ))}{" "}
+        ))}
       </Container>
     </div>
   );

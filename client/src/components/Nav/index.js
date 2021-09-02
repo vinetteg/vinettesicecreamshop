@@ -51,7 +51,7 @@ export default class Nav extends Component {
           className="flex-row px-1 ui stackable four column grid"
           ref={this.contextRef}
         >
-          <Link to="/" attached="top" context={this.contextRef}>
+          <Link to="/" attached="top">
             <span>
               <Image
                 src={`/images/vicsLogo.png`}
@@ -62,11 +62,11 @@ export default class Nav extends Component {
               />
             </span>
           </Link>
-          <nav>
+          <nav context={this.contextRef}>
             <CategoryMenu />
           </nav>
           {showNavigation()}
-          <Cart attached="bottom" />
+          <Cart />
         </header>
       </Sticky>
     );

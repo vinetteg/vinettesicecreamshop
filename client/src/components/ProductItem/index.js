@@ -1,9 +1,11 @@
 import React from "react";
+import "./style.css";
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
+import { Card } from "semantic-ui-react";
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
@@ -34,19 +36,36 @@ function ProductItem(item) {
   };
 
   return (
-    <div className="card px-1 py-1">
-      <Link to={`/products/${_id}`}>
-        <img alt={name} src={`/images/${image}`} />
-        <p>{name}</p>
-      </Link>
-      <div>
-        <div>
-          {quantity} {pluralize("item", quantity)} in stock
+    <Card.Group>
+      <div id="cardCont">
+        <div className="productImgSec">
+          <Link to={`/products/${_id}`}>
+            <img alt={name} src={`/images/${image}`} id="productImg" />
+          </Link>
         </div>
-        <span>${price}</span>
+        <div className="productInfo">
+          <div className="cardTxt">
+            <h1 className="cardHeader">{name}</h1>
+            <p className="cardP">
+              Enjoy our freshly made ice cream right at home! <br></br>Made with
+              fresh and local ingredients. From classic flavors to our very own
+              Vinette's Special Flavors. <br></br>Also, what's a better way to
+              enjoy your ice cream than with our exclusive VICS merch!
+            </p>
+          </div>
+          <div id="purchaseSec">
+            <p>
+              {quantity}
+              <span>{pluralize("item", quantity)}</span> in stock
+            </p>
+            <span>${price}</span>
+            <button onClick={addToCart} id="addToCartBtn">
+              Add to cart
+            </button>
+          </div>
+        </div>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
-    </div>
+    </Card.Group>
   );
 }
 

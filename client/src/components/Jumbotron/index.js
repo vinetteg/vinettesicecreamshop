@@ -4,10 +4,12 @@ import Slide from "react-reveal/Slide";
 
 function Jumbotron() {
   return (
-    <div class="ui masthead center aligned segment ui fluid" id="jumboPic">
-      <div class="ui text container">
+    <div className="ui masthead center aligned segment ui fluid" id="jumboPic">
+      <div className="ui text container">
         <Slide top>
-          <h1>You Followed Your Heart and It Led You to Ice Cream</h1>
+          <h1 className="jumboHeader">
+            You Followed Your Heart and It Led You to Ice Cream
+          </h1>
         </Slide>
       </div>
     </div>
