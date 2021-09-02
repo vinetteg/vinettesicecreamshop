@@ -26,15 +26,12 @@ i#basket {
   position: relative;
   display: flex;
   flex-direction: row;
-  left: 130px;
+  left: 110px;
   opacity: 0.8;
+  top: 4px;
 }
 
 i#basket:hover {
-  position: relative !important;
-  display: flex !important;
-  flex-direction: row !important;
-  left: 130px !important;
   opacity: 0.9 !important;
   color: #fafafa !important;
 }

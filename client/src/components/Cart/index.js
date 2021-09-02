@@ -84,8 +84,8 @@ const Cart = () => {
         [X]
       </div>
       <h2>Shopping Cart</h2>
-      <div class="ui tiny active violet progress">
-        <div class="bar"></div>
+      <div className="ui tiny active violet progress">
+        <div className="bar"></div>
       </div>
       <h6>Spend $1,000,000 for free shipping</h6>
       {state.cart.length ? (

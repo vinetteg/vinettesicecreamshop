@@ -13,6 +13,8 @@ import {
 } from "../utils/actions";
 import { QUERY_PRODUCTS } from "../utils/queries";
 
+// import { UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
+
 import { MUTATE_UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
 
 import { idbPromise } from "../utils/helpers";
@@ -119,7 +121,6 @@ function Detail() {
 
           <h2>{currentProduct.name}</h2>
           <p>{currentProduct.description}</p>
-
           <p>
             <strong>Price:</strong>${currentProduct.price}{" "}
             <button onClick={addToCart}>Add to Cart</button>
@@ -205,7 +206,6 @@ function Detail() {
               </Comment.Content>
             </Comment> */}
             {/* insert code here */}
-
             <Form onSubmit={handleAddComment}>
               <Form.TextArea
                 value={comment}
