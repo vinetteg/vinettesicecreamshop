@@ -83,7 +83,7 @@ const Cart = () => {
       <div className="close" onClick={toggleCart}>
         [X]
       </div>
-      <h2>Shopping Cart</h2>
+      <h2 className="shoppingHeader">Shopping Cart</h2>
       <div className="ui tiny active violet progress">
         <div className="bar"></div>
       </div>
@@ -106,7 +106,7 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <h4>
+        <h4 className="cartInfo">
           <span role="img" aria-label="shocked"></span>
           You haven't added anything to your cart yet!
         </h4>
