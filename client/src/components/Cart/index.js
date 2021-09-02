@@ -83,15 +83,9 @@ const Cart = () => {
       <div className="close" onClick={toggleCart}>
         [X]
       </div>
-<<<<<<< HEAD
-      <h5>Shopping Cart</h5>
-      <div class="ui tiny active violet progress">
-        <div class="bar"></div>
-=======
       <h2>Shopping Cart</h2>
       <div className="ui tiny active violet progress">
         <div className="bar"></div>
->>>>>>> b19d89709e44ed3313682f1b0ecc5f0e5999ef76
       </div>
       <h6>Spend $1,000,000 for free shipping</h6>
       {state.cart.length ? (
