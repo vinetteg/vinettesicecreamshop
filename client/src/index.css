@@ -201,6 +201,229 @@ input:focus {
   color: var(--error);
 }
 
+/* details pg */
+.containerDetailpg {
+  background-color: none;
+  border-radius: 7px 7px 7px 7px !important;
+  flex-direction: row !important;
+  display: flexbox !important;
+}
+
+#backBtn {
+  font-size: 18px;
+  /* font-family: "Pacifico", cursive; */
+  color: #d889e8;
+  text-shadow: 2px 6px 7px #fafafa, -1px 1px 11px #37b7c0;
+  text-align: center;
+  bottom: 8px;
+  position: relative;
+}
+#cardImgSec img {
+  height: 460px !important;
+  width: 380px !important;
+  border-radius: 7px 0 0 7px;
+  max-width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
+}
+div.detailsCardCont {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  margin-left: 180px;
+}
+
+#cardImgSec {
+  float: left !important;
+  height: 460px !important;
+  background-color: transparent;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+.productInfoSec {
+  align-content: center;
+  margin-top: 50px;
+  float: left !important;
+  height: 460px !important;
+  width: 400px !important;
+  border-radius: 0 7px 7px 0 !important;
+  background-color: #ffffff !important;
+  font-size: 16px !important;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
+}
+
+.infoText {
+  height: 230px !important;
+  width: 385px !important;
+}
+
+p.detailDescription {
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  color: #d889e8;
+  font-size: 18px;
+  margin-bottom: 10px !important;
+}
+
+h1.detailHeader {
+  margin-top: 50px !important;
+  font-size: 35px !important;
+  font-family: "Pacifico", cursive;
+  /* margin-right: -92px !important; */
+  color: #d889e8;
+  text-shadow: 2px 6px 7px #fafafa, -1px 1px 11px #37b7c0;
+}
+
+#buySec {
+  height: 103px;
+  width: 320px;
+  position: relative;
+  bottom: 20px;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+button#removeItmBtn {
+  float: right;
+  height: 40px;
+  width: 180px;
+  margin-top: 20px !important;
+  margin: 0 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #fafafa;
+  background-color: #89e5e8;
+  cursor: pointer;
+  outline: none;
+}
+
+button#removeItmBtn:hover {
+  background-color: #89e5e8;
+  opacity: 0.5;
+}
+span#price {
+  font-family: "Pacifico", cursive;
+  /* margin-right: -92px !important; */
+  color: #d889e8;
+  text-shadow: 2px 6px 7px #fafafa, -1px 1px 11px #37b7c0;
+  font-size: 25px;
+  margin-top: 45px !important;
+  top: 30px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.commentsCont {
+  background-color: none;
+  border-radius: 7px 7px 7px 7px !important;
+  flex-direction: row !important;
+  display: flexbox !important;
+  align-content: center;
+  margin-top: 50px;
+  float: left !important;
+  height: 460px !important;
+  width: 850px !important;
+  border-radius: 0 7px 7px 0 !important;
+  background-color: #ffffff !important;
+  font-size: 16px !important;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
+}
+
+h1#commentHeader {
+  margin-top: 10px !important;
+  font-size: 35px !important;
+  font-family: "Pacifico", cursive !important;
+  /* margin-right: -92px !important; */
+  color: #d889e8 !important;
+  text-shadow: 2px 6px 7px #fafafa, -1px 1px 11px #37b7c0 !important;
+}
+
+#currentCommentWrapper {
+  align-content: center;
+  float: left !important;
+  height: 200px !important;
+  width: 400px !important;
+  border-radius: 0 7px 7px 0 !important;
+  background-color: #ffffff !important;
+  font-size: 16px !important;
+  text-align: center;
+  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.submitCommentCont {
+  background-color: none;
+  border-radius: 7px 7px 7px 7px !important;
+  flex-direction: row !important;
+  display: flexbox !important;
+  align-content: center;
+  /* margin-top: 50px; */
+  float: left !important;
+  height: 388px !important;
+  width: 415px !important;
+  border-radius: 7px 7px 7px 7px !important;
+  background-color: #ffffff !important;
+  font-size: 16px !important;
+  text-align: center;
+}
+
+h3#leaveComment {
+  margin-top: 10px !important;
+  font-size: 28px !important;
+  font-family: "Pacifico", cursive !important;
+  /* margin-right: -92px !important; */
+  color: #d889e8 !important;
+  text-shadow: 2px 6px 7px #fafafa, -1px 1px 11px #37b7c0 !important;
+}
+
+#formCont {
+  background-color: none;
+  border-radius: 7px 7px 7px 7px !important;
+  flex-direction: row !important;
+  display: flexbox !important;
+  align-content: center;
+  /* margin-top: 50px; */
+  float: left !important;
+  height: 130px !important;
+  width: 400px !important;
+  border-radius: 7px 7px 7px 7px !important;
+  background-color: #ffffff !important;
+  font-size: 16px !important;
+  text-align: center;
+  margin-left: 10px;
+  flex-wrap: wrap;
+}
+
+#commentFormBtn {
+  float: right;
+  height: 44px !important;
+  margin-right: 90px !important;
+  width: 190px;
+  margin-top: 20px !important;
+  margin: 0 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #fafafa;
+  background-color: #89e5e8;
+  cursor: pointer;
+  outline: none;
+}
+#commentFormBtn {
+  background-color: #89e5e8;
+  opacity: 0.5;
+}
+/* details page above */
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;

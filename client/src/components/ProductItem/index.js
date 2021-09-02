@@ -47,10 +47,11 @@ function ProductItem(item) {
           <div className="cardTxt">
             <h1 className="cardHeader">{name}</h1>
             <p className="cardP">
-              Enjoy our freshly made ice cream right at home! <br></br>Made with
-              fresh and local ingredients. From classic flavors to our very own
-              Vinette's Special Flavors. <br></br>Also, what's a better way to
-              enjoy your ice cream than with our exclusive VICS merch!
+              Enjoy our freshly made ice cream right at home! Made with fresh
+              and local ingredients. From classic flavors to our very own
+              Vinette's Seasonal Flavors. Also, what's a better way to enjoy
+              your ice cream than with our exclusive VICS merch! Click to see
+              more!
             </p>
           </div>
           <div id="purchaseSec">

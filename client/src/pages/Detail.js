@@ -26,6 +26,7 @@ import {
   Button,
   Form,
   Checkbox,
+  Icon,
 } from "semantic-ui-react";
 
 function Detail() {
@@ -115,47 +116,78 @@ function Detail() {
   return (
     <>
       {currentProduct && cart ? (
-        <div className="container my-1">
-          <Link to="/">← Back to Products</Link>
-
-          <h2>{currentProduct.name}</h2>
-          <p>{currentProduct.description}</p>
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{" "}
-            <button onClick={addToCart}>Add to Cart</button>
-            <button
-              disabled={!cart.find((p) => p._id === currentProduct._id)}
-              onClick={removeFromCart}
+        <Container fluid className="containerDetailpg">
+          <Link to="/">
+            <Icon
+              name="arrow alternate circle left outline"
+              size="big"
+              id="backBtn"
             >
-              Remove from Cart
-            </button>
-          </p>
-
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
-          <p>{currentProduct?.comments?.map(comment._id)}</p>
-
-          <Container fluid>
-            <Comment.Group minimal>
-              <Header as="h3" dividing>
-                Comments:
-              </Header>
-            </Comment.Group>
-
-            <Form onSubmit={handleAddComment}>
-              <Form.TextArea
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-              />
-
-              <Form.Button type="submit" fluid color="blue">
-                Submit
-              </Form.Button>
-            </Form>
-          </Container>
-        </div>
+              Back to Products
+            </Icon>
+          </Link>
+          <div id="cardWrapper">
+            <div className="detailsCardCont">
+              <div id="cardImgSec">
+                <img
+                  src={`/images/${currentProduct.image}`}
+                  alt={currentProduct.name}
+                  height="300"
+                  width="280"
+                />
+              </div>
+              <div className="productInfoSec">
+                <div className="infoText">
+                  <h1 className="detailHeader">{currentProduct.name}</h1>
+                  <Container text fluid>
+                    <p className="detailDescription">
+                      {currentProduct.description}
+                    </p>
+                  </Container>
+                </div>
+                <Container text fluid id="buySec">
+                  <span id="price">${currentProduct.price} </span>
+                  <button onClick={addToCart} id="addToCartBtn">
+                    Add to cart
+                  </button>
+                  <button
+                    disabled={!cart.find((p) => p._id === currentProduct._id)}
+                    onClick={removeFromCart}
+                    id="removeItmBtn"
+                  >
+                    Remove From Cart
+                  </button>
+                </Container>
+              </div>
+              <Container className="commentsCont">
+                <h1 id="commentHeader">Comments</h1>
+                <Comment.Group id="currentCommentWrapper">
+                  <div className="currentCommentCont">
+                    <p>{currentProduct?.comments?.map(comment._id)}</p>
+                  </div>
+                </Comment.Group>
+                <div className="submitCommentCont">
+                  <h3 id="leaveComment">Leave Us a Comment</h3>
+                  <Form onSubmit={handleAddComment} id="formCont">
+                    <Form.TextArea
+                      value={comment}
+                      onChange={(e) => setComment(e.target.value)}
+                      id="commentTextBox"
+                    />
+                    <Form.Button
+                      type="submit"
+                      fluid
+                      color="blue"
+                      id="commentFormBtn"
+                    >
+                      Submit Your Comment
+                    </Form.Button>
+                  </Form>
+                </div>
+              </Container>
+            </div>
+          </div>
+        </Container>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}
     </>
