@@ -20,9 +20,13 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
+<<<<<<< HEAD
     "lodash": "^4.17.21",
     "react-reveal": "^1.2.2",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3"
+=======
+    "react-reveal": "^1.2.2"
+>>>>>>> cc28eee88a992809cd5fdf9c60cd5c1848ff7063
   }
 }
