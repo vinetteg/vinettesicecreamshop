@@ -13,11 +13,7 @@ import {
 } from "../utils/actions";
 import { QUERY_PRODUCTS } from "../utils/queries";
 
-<<<<<<< HEAD
-import { MUTATION_UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
-=======
 import { MUTATE_UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
->>>>>>> e8118c3d560d07bf5eb07e930a7d87df7087c8b0
 
 import { idbPromise } from "../utils/helpers";
 import spinner from "../assets/spinner.gif";
@@ -40,11 +36,7 @@ function Detail() {
   const [comment, setComment] = useState("");
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-<<<<<<< HEAD
-  const [addComment, { error }] = useMutation(MUTATION_UPDATE_PRODUCTS_COMMENT);
-=======
   const [addComment, { error }] = useMutation(MUTATE_UPDATE_PRODUCTS_COMMENT);
->>>>>>> e8118c3d560d07bf5eb07e930a7d87df7087c8b0
   const { products, cart } = state;
 
   useEffect(() => {
