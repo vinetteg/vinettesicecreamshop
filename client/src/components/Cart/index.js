@@ -81,11 +81,9 @@ const Cart = () => {
   return (
     <div className="cart">
       <div className="close" onClick={toggleCart}>
-        [close]
+        [X]
       </div>
-      <h2>
-        Shopping Cart <Icon name="shopping basket" id="basket" />
-      </h2>
+      <h2>Shopping Cart</h2>
       <div class="ui tiny active violet progress">
         <div class="bar"></div>
       </div>
