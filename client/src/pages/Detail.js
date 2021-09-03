@@ -13,8 +13,6 @@ import {
 } from "../utils/actions";
 import { QUERY_PRODUCTS } from "../utils/queries";
 
-// import { UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
-
 import { MUTATE_UPDATE_PRODUCTS_COMMENT } from "../utils/mutations";
 
 import { idbPromise } from "../utils/helpers";
