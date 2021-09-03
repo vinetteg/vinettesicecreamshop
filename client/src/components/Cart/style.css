@@ -78,3 +78,8 @@ h2.shoppingHeader {
   /* flex-direction: row;
   flex-wrap: wrap; */
 }
+
+img {
+  max-width: 20%;
+  height: auto;
+}

@@ -89,7 +89,7 @@ const Cart = () => {
       </div>
       <h6>Spend $1,000,000 for free shipping</h6>
       {state.cart.length ? (
-        <div>
+        <div className="cartimage">
           {state.cart.map((item) => (
             <CartItem key={item._id} item={item} />
           ))}
